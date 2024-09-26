@@ -1,0 +1,46 @@
+
+{% for product in products %}
+<div class="col-md-4 mb-4">
+    <a href="{% url 'detail' product.id %}" class="text-decoration-none">
+        <div class="card h-100">
+            <img src="{{product.image.url}}" alt="{{product.titlea}}" class="card-img-top img-fluid">
+            <div class="card-body">
+                <h5 class="card-title text-black">{{product.title|truncatewords:3}}</h5>
+                <p class="card-text text-black">{{product.seller}}</p>
+                <p class="card-text text-black">{{product.price}}</p>
+                <p class="card-text text-black">{{product.seller}}</p>
+            </div>
+            <div class="p-2">
+                <a href="{% url 'detail' product.id %}">View Detail</a>
+            </div>
+        </div>
+    </a>
+</div>
+
+{% endfor %}
+    
+ 
+ 
+ 
+ 
+ 
+ 
+{% comment %}  
+ 
+ <div class="row">
+
+        {% for  product in products  %}
+            <div class="card" >
+                <img src="{{ product.image.url }}" alt="{{ product.title}} "style="height: 400px; width: 400px;">
+                <div class="card-body" >
+                    <h3>{{ product.title|truncatewords:4 }}</h3>
+                    <p class="card-price">{{ product.price }}</p>
+                    <p class="card-time">{{ product.created_at|date:"F J, Y"}}</p>
+                </div>
+                <div class="p-2">
+                    <a href="{% url 'detail' product.id %}"> View Detail</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div> {% endcomment %}
